@@ -7,11 +7,14 @@
 #include <cstdint>
 #include <vector>
 #include <vk_types.h>
+#include "vk_images.h"
 #include <vulkan/vulkan_core.h>
 
 struct FrameData {
 	VkCommandPool _commandPool;
 	VkCommandBuffer _mainCommandBuffer;
+	VkSemaphore _swapchainSemaphore, _renderSemaphore;
+	VkFence _renderFence;
 };
 
 constexpr unsigned int FRAME_OVERLAP = 2;
